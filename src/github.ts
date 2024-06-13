@@ -136,6 +136,7 @@ export const asset = (path: string): ReleaseAsset => {
 };
 
 export const mimeOrDefault = (path: string): string => {
+  if (path.endsWith('.par')) return "application/zip";
   return getType(path) || "application/octet-stream";
 };
 
